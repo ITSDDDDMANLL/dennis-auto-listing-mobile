@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="FB Listing">
+    <title>FB Listing Mobile Helper</title>
+    <link rel="stylesheet" href="mobile.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <h1>FB Listing</h1>
+          <p>Generate fields, copy, paste into Facebook.</p>
+        </div>
+        <span id="status">Ready</span>
+      </header>
+
+      <label class="field" for="rawInput">
+        Vehicle notes
+        <textarea id="rawInput" spellcheck="false">2018 Jeep Wranglet Sahara Unlimited, 116,076km, leather interior, heated seats, heated wheel, backup camera. Windshield will be fixed</textarea>
+      </label>
+
+      <div class="split">
+        <label class="field">
+          Price
+          <input id="priceInput" type="text" inputmode="numeric" placeholder="Auto">
+        </label>
+        <label class="field">
+          Transmission
+          <select id="transmissionInput">
+            <option>Automatic</option>
+            <option>Manual</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+
+      <button id="generateBtn" class="primary" type="button">Generate</button>
+
+      <section class="card">
+        <div class="cardHead">
+          <span>Generated fields</span>
+          <button id="copyAllBtn" class="small" type="button">Copy All</button>
+        </div>
+        <div id="fieldList" class="fieldList"></div>
+      </section>
+
+      <section class="card">
+        <div class="cardHead">
+          <span>Description</span>
+          <button id="copyBodyBtn" class="small" type="button">Copy</button>
+        </div>
+        <h2 id="titleOutput"></h2>
+        <pre id="bodyOutput"></pre>
+      </section>
+
+      <nav class="bottomBar">
+        <button id="openMarketplaceBtn" type="button">Open Marketplace</button>
+        <button id="shareBtn" type="button">Share Text</button>
+      </nav>
+    </main>
+
+    <script src="mobile.js"></script>
+  </body>
+</html>
